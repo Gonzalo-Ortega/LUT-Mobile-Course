@@ -2,13 +2,11 @@ package com.example.myfirstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,18 +15,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button multiplyButton = (Button) findViewById(R.id.multiplyButton);
-        multiplyButton.setOnClickListener(new View.OnClickListener() {
+        // Attempts to launch an activity within our own app.
+        Button multiplierActivityButton = (Button) findViewById(R.id.multiplierActivityButton);
+        multiplierActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText firstNumEditText = (EditText) findViewById(R.id.firstNumEditText);
-                EditText secondNumEditText = (EditText) findViewById(R.id.secondNumEditText);
-                TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
+                Intent multiplierIntent = new Intent(getApplicationContext(), MultiplyActivity.class);
+                // Show how to pass information to another activity:
+                multiplierIntent.putExtra("com.example.myfirstapp.HELLO", "Helloooooooo :)");
+                startActivity(multiplierIntent);
+            }
+        });
 
-                int num1 = Integer.parseInt(firstNumEditText.getText().toString());
-                int num2 = Integer.parseInt(secondNumEditText.getText().toString());
-                int result = num1 * num2;
-                resultTextView.setText(result + "");
+        // Attempts to launch an activity outside our app.
+        Button googleActivityButton = (Button) findViewById(R.id.googleActivityButton);
+        googleActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String google = "http://www.google.com";
+                Uri webAddress = Uri.parse(google);
+
+                Intent goToGoogle = new Intent(Intent.ACTION_VIEW, webAddress);
+                if (goToGoogle.resolveActivity(getPackageManager()) != null) {
+                    startActivity(goToGoogle);
+                }
             }
         });
     }
