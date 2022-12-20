@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">My App</string>
+
+    <string-array name="items">
+        <item>dog</item>
+        <item>cat</item>
+        <item>pig</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>19.95€</item>
+        <item>24.95€</item>
+        <item>17.95€</item>
+    </string-array>
+
+    <string-array name="descriptios">
+        <item>Happy dog</item>
+        <item>Sad cat</item>
+        <item>Angry pig</item>
+    </string-array>
+
 </resources>

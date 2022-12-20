@@ -27,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button listActivityButton = (Button) findViewById(R.id.listActivityButton);
+        listActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listIntent = new Intent(getApplicationContext(), ListActivity.class);
+                startActivity(listIntent);
+            }
+        });
+
         // Attempts to launch an activity outside our app.
         Button googleActivityButton = (Button) findViewById(R.id.googleActivityButton);
         googleActivityButton.setOnClickListener(new View.OnClickListener() {
