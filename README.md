@@ -1,4 +1,7 @@
-# LUT-Mobile-Course
-Android app made for LUT´s course Software Development Skills: Mobile.
+# Mobile Course
+#### 🏛️ Imparted in Lappeenranta University of Technology during 2022 for the Software Engineering degree.
 
-To run the project, open the FyFirstApp Android Studio project and click the run button.
+Android app made for LUT´s course Software Development Skills: Mobile.
+- - -
+
+* To run the project, open the MyFirstApp Android Studio project and click the run button.
